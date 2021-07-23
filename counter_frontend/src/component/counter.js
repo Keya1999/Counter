@@ -2,52 +2,56 @@ import React, { useState } from "react";
 import Button from "./Button";
 import "../styles/counter.css";
 
-const Counter = () => {
+const Counter = (props) => {
   const [values, setValues] = useState({
-    counter_value: 1,
-    max_value: 1000,
+    counterValue: 1,
+    maxValue: props.maxValue ? props.maxValue : 1000,
   });
 
-  const { counter_value, max_value } = values;
+  const { counterValue, maxValue } = values;
 
   const handleChange = (name) => (event) => {
     setValues({ ...values, [name]: parseInt(event.target.value) });
   };
 
   const incrementCounter = () => {
-    if (counter_value === null || Number.isNaN(counter_value))
-      setValues({ ...values, counter_value: parseInt(1) });
-    else setValues({ ...values, counter_value: parseInt(counter_value + 1) });
+    if (counterValue === null || Number.isNaN(counterValue))
+      setValues({ ...values, counterValue: parseInt(1) });
+    else setValues({ ...values, counterValue: parseInt(counterValue + 1) });
   };
 
   const decrementCounter = () => {
-    setValues({ counter_value: counter_value - 1 });
+    setValues({ counterValue: counterValue - 1 });
   };
 
   const displayCounter = () => {
+
     return (
       <div className="container">
-        <Button onClick={decrementCounter} className="dec-btn">
+        <Button 
+          onClick={decrementCounter} 
+          className="btn-dec">
           -
         </Button>
 
         <input
           type="number"
-          value={counter_value}
-          name="counter_value"
-          onChange={handleChange("counter_value")}
+          value={counterValue}
+          name="counterValue"
+          onChange={handleChange("counterValue")}
         />
 
         <Button
           onClick={incrementCounter}
-          disabled={counter_value === max_value}
-          className="inc-btn"
+          disabled={counterValue === maxValue}
+          className="btn-inc"
         >
           +
         </Button>
       </div>
     );
   };
+
   return <div>{displayCounter()}</div>;
 };
 
