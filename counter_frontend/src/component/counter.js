@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import Button from "./Button";
+import "../styles/counter.css";
 
 const Counter = () => {
   const [values, setValues] = useState({
@@ -25,23 +26,26 @@ const Counter = () => {
 
   const displayCounter = () => {
     return (
-      <React.Fragment>
-        <div>
-          <Button onClick={decrementCounter}>-</Button>
-          <input
-            type="number"
-            value={counter_value}
-            name="counter_value"
-            onChange={handleChange("counter_value")}
-          />
-          <Button
-            onClick={incrementCounter}
-            disabled={counter_value === max_value}
-          >
-            +
-          </Button>
-        </div>
-      </React.Fragment>
+      <div className="container">
+        <Button onClick={decrementCounter} className="dec-btn">
+          -
+        </Button>
+
+        <input
+          type="number"
+          value={counter_value}
+          name="counter_value"
+          onChange={handleChange("counter_value")}
+        />
+
+        <Button
+          onClick={incrementCounter}
+          disabled={counter_value === max_value}
+          className="inc-btn"
+        >
+          +
+        </Button>
+      </div>
     );
   };
   return <div>{displayCounter()}</div>;

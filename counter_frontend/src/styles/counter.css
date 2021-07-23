@@ -1,0 +1,58 @@
+@import url("https://fonts.googleapis.com/css2?family=Avenir");
+
+.container {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: fit-content;
+}
+
+.dec-btn {
+  width: 60px;
+  height: 56px;
+  border-top-left-radius: 8px;
+  border-bottom-left-radius: 8px;
+  background: #fff;
+  border: 1px solid #b24242;
+  font-size: 21px;
+  font-weight: 900;
+  color: #b24242;
+  font-family: Avenir;
+}
+
+.inc-btn {
+  width: 60px;
+  height: 56px;
+  border-top-right-radius: 8px;
+  border-bottom-right-radius: 8px;
+  background: #b24242;
+  border: 1px solid #b24242;
+  color: #fff;
+  font-size: 21px;
+  font-weight: 900;
+  font-family: Avenir;
+}
+
+input[type="number"] {
+  max-width: 60px;
+  height: 56px;
+  padding: 12px 16px;
+  display: inline-block;
+  font-size: 21px;
+  font-weight: 900;
+  color: #b24242;
+  background-color: #fbe8e8;
+  border-width: 1px;
+  border-color: #b24242;
+  border-left: none;
+  border-right: none;
+  box-sizing: border-box;
+  outline: none;
+  font-family: Avenir;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
