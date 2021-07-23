@@ -9,30 +9,28 @@
   width: fit-content;
 }
 
-.btn-dec {
+.btn{
   width: 60px;
   height: 56px;
+  font-size: 21px;
+  font-weight: 900;
+  font-family: Avenir;
+}
+
+.btn-dec {
   border-top-left-radius: 8px;
   border-bottom-left-radius: 8px;
   background: #fff;
   border: 1px solid #b24242;
-  font-size: 21px;
-  font-weight: 900;
   color: #b24242;
-  font-family: Avenir;
 }
 
 .btn-inc {
-  width: 60px;
-  height: 56px;
   border-top-right-radius: 8px;
   border-bottom-right-radius: 8px;
   background: #b24242;
   border: 1px solid #b24242;
   color: #fff;
-  font-size: 21px;
-  font-weight: 900;
-  font-family: Avenir;
 }
 
 input[type="number"] {

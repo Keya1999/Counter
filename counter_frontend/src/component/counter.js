@@ -11,7 +11,7 @@ const Counter = (props) => {
   const { counterValue, maxValue } = values;
 
   const handleChange = (name) => (event) => {
-    setValues({ ...values, [name]: parseInt(event.target.value) });
+    setValues({ ...values, [name]: event.target.value <= maxValue ? parseInt(event.target.value) : maxValue });
   };
 
   const incrementCounter = () => {
@@ -30,7 +30,7 @@ const Counter = (props) => {
       <div className="container">
         <Button 
           onClick={decrementCounter} 
-          className="btn-dec">
+          className="btn btn-dec">
           -
         </Button>
 
@@ -44,7 +44,7 @@ const Counter = (props) => {
         <Button
           onClick={incrementCounter}
           disabled={counterValue === maxValue}
-          className="btn-inc"
+          className="btn btn-inc"
         >
           +
         </Button>
