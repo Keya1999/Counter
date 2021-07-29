@@ -11,7 +11,13 @@ const Counter = (props) => {
   const { counterValue, maxValue } = values;
 
   const handleChange = (name) => (event) => {
-    setValues({ ...values, [name]: parseInt(event.target.value) });
+    setValues({
+      ...values,
+      [name]:
+        event.target.value <= maxValue
+          ? parseInt(event.target.value)
+          : maxValue,
+    });
   };
 
   const incrementCounter = () => {
@@ -25,12 +31,9 @@ const Counter = (props) => {
   };
 
   const displayCounter = () => {
-
     return (
       <div className="container">
-        <Button 
-          onClick={decrementCounter} 
-          className="btn-dec">
+        <Button onClick={decrementCounter} className="btn-dec">
           -
         </Button>
 
