@@ -14,20 +14,16 @@ const Counter = (props) => {
     setValues({
       ...values,
       [name]:
-        event.target.value <= maxValue
-          ? parseInt(event.target.value)
-          : maxValue,
+        event.target.value <= maxValue ? Number(event.target.value) : maxValue,
     });
   };
 
   const incrementCounter = () => {
-    if (counterValue === null || Number.isNaN(counterValue))
-      setValues({ ...values, counterValue: parseInt(1) });
-    else setValues({ ...values, counterValue: parseInt(counterValue + 1) });
+    setValues({ ...values, counterValue: counterValue + 1 });
   };
 
   const decrementCounter = () => {
-    setValues({ counterValue: counterValue - 1 });
+    setValues({ ...values, counterValue: counterValue - 1 });
   };
 
   const displayCounter = () => {
